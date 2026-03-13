@@ -1,0 +1,234 @@
+.landing {
+  min-height: 100vh;
+  width: min(1120px, 100% - 40px);
+  margin: 0 auto;
+  padding: 24px 0 64px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 64px;
+}
+
+.brand {
+  font-size: clamp(1.4rem, 2.4vw, 2.1rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  text-decoration: none;
+}
+
+.theme-toggle {
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  font-family: inherit;
+  font-weight: 600;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+  border-color: var(--text);
+}
+
+.theme-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--text);
+}
+
+.hero {
+  text-align: center;
+  padding: 30px 14px 20px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.77rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 0;
+}
+
+.hero h1 {
+  margin: 16px auto;
+  max-width: 920px;
+  font-size: clamp(2rem, 6.2vw, 4.65rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.subtext {
+  margin: 0 auto;
+  max-width: 700px;
+  font-size: 1.06rem;
+  color: var(--muted);
+}
+
+.hero-actions {
+  margin-top: 34px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 194px;
+  border-radius: 12px;
+  padding: 13px 20px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid transparent;
+  transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-solid {
+  background: var(--accent);
+  color: var(--accent-contrast);
+}
+
+.button-outline {
+  border-color: var(--border);
+  background: transparent;
+}
+
+.button-outline:hover {
+  border-color: var(--text);
+}
+
+.network-strip {
+  margin: 56px auto 40px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--panel);
+  padding: 18px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.network-strip p {
+  margin: 0;
+  font-size: 0.86rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--muted);
+}
+
+.network-strip code {
+  margin: 0;
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  font-size: 0.78rem;
+  border-radius: 10px;
+  background: var(--chip);
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+}
+
+.card-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.info-card {
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  padding: 26px;
+}
+
+.info-card h2 {
+  margin: 0 0 10px;
+  font-size: 1.26rem;
+  letter-spacing: -0.02em;
+}
+
+.info-card p {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.verify-preview {
+  margin-top: 18px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--panel);
+  padding: 28px;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 1.4fr 1fr;
+  align-items: center;
+}
+
+.verify-preview h2 {
+  margin: 12px 0 12px;
+  font-size: clamp(1.5rem, 3.3vw, 2rem);
+  letter-spacing: -0.02em;
+}
+
+.verify-preview p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.code-chip {
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--chip);
+  padding: 26px 20px;
+  font-size: clamp(0.9rem, 2.2vw, 1.15rem);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-align: center;
+}
+
+@media (max-width: 960px) {
+  .landing {
+    width: min(1120px, 100% - 26px);
+    padding-top: 16px;
+  }
+
+  .topbar {
+    margin-bottom: 42px;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .verify-preview {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+  }
+}
