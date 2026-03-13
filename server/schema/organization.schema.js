@@ -11,6 +11,9 @@ const organizationSchema = new mongoose.Schema(
     description: { type: String, default: '', trim: true },
     onChainDigest: { type: String, default: '', trim: true },
     onChainRegisteredAt: { type: Date, default: null },
+    certificateRegistryId: { type: String, default: '', trim: true },
+    certificateRegistryDigest: { type: String, default: '', trim: true },
+    certificateRegistryCreatedAt: { type: Date, default: null },
     approvedAt: { type: Date, default: Date.now },
   },
   { timestamps: true }
