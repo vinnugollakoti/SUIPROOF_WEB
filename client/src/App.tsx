@@ -1226,7 +1226,6 @@ function App() {
             </a>
           </nav>
 
-<<<<<<< Updated upstream
           {page === 'landing' ||
           page === 'verify' ||
           page === 'admin' ||
@@ -1235,11 +1234,9 @@ function App() {
               <ConnectButton />
             </div>
           ) : null}
-=======
           <div className="wallet-nav">
             <ConnectButton />
           </div>
->>>>>>> Stashed changes
 
           <button
             type="button"
