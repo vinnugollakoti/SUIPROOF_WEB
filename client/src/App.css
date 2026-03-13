@@ -269,6 +269,29 @@
   text-align: center;
 }
 
+.verify-form {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--chip);
+  padding: 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.verify-form-hero {
+  max-width: 720px;
+  margin: 30px auto 0;
+  text-align: left;
+}
+
+.verify-form label {
+  font-size: 0.86rem;
+}
+
+.verify-form .button {
+  width: 100%;
+}
+
 .org-panel {
   display: grid;
   gap: 16px;
@@ -650,6 +673,69 @@ textarea {
   text-align: center;
 }
 
+.verify-page-form .field-row .button {
+  min-width: 170px;
+}
+
+.created-filters {
+  margin-bottom: 12px;
+}
+
+.created-filters .button {
+  min-width: 180px;
+}
+
+.qr-card {
+  margin-top: 16px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--chip);
+  padding: 16px;
+  display: grid;
+  gap: 10px;
+}
+
+.qr-card h3 {
+  margin: 0;
+  font-size: 1.02rem;
+}
+
+.qr-image {
+  width: 220px;
+  max-width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 8px;
+}
+
+.qr-image-small {
+  width: 140px;
+  margin: 8px 0 10px;
+}
+
+.verify-result-card {
+  text-align: left;
+}
+
+.verify-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 18px;
+  margin-top: 10px;
+}
+
+.verify-meta-grid p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+  word-break: break-word;
+}
+
+.verify-meta-grid strong {
+  color: var(--text);
+}
+
 .success-pop {
   margin-top: 12px;
   border: 1px solid var(--border);
@@ -717,7 +803,8 @@ textarea {
 
   .field-row,
   .form-grid.two-cols,
-  .admin-grid {
+  .admin-grid,
+  .verify-meta-grid {
     grid-template-columns: 1fr;
   }
 

@@ -143,6 +143,52 @@ router.post('/register-request', async (req, res) => {
   }
 })
 
+router.post('/certificate-registry', async (req, res) => {
+  try {
+    const wallet = String(req.body?.wallet || '')
+      .trim()
+      .toLowerCase()
+    const certificateRegistryId = String(req.body?.certificateRegistryId || '').trim()
+    const onChainDigest = String(req.body?.onChainDigest || '').trim()
+
+    if (!wallet || !certificateRegistryId || !onChainDigest) {
+      return res.status(400).json({
+        message:
+          'wallet, certificateRegistryId, and onChainDigest are required',
+      })
+    }
+
+    const organization = await Organization.findOne({ wallet })
+
+    if (!organization) {
+      return res
+        .status(404)
+        .json({ message: 'Organization not found or not approved yet' })
+    }
+
+    if (organization.certificateRegistryId) {
+      return res.status(409).json({
+        message: 'Certificate registry already created for this organization',
+        organization,
+      })
+    }
+
+    organization.certificateRegistryId = certificateRegistryId
+    organization.certificateRegistryDigest = onChainDigest
+    organization.certificateRegistryCreatedAt = new Date()
+    await organization.save()
+
+    res.json({
+      message: 'Certificate registry linked successfully',
+      dbName: mongoose.connection?.db?.databaseName || 'unknown',
+      organization,
+    })
+  } catch (err) {
+    console.error(err)
+    res.status(500).json({ message: 'Failed to save certificate registry' })
+  }
+})
+
 router.get('/admin/requests', async (req, res) => {
   try {
     if (!isAuthorizedAdmin(req)) {
