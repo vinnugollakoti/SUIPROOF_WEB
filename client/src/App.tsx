@@ -78,7 +78,7 @@ const ADMIN_WALLET =
   '0x7c88663e7928a8fcd1a8c16f110580270cde571987ff1ccfa7c72d772370604d'
 const DEFAULT_ORG_REGISTRY_ID = import.meta.env.VITE_ORG_REGISTRY_ID || ''
 
-const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:4000/api'
+const API_BASE = import.meta.env.VITE_API_BASE_URL || 'https://suiproof-web.onrender.com/api'
 
 const valueCards = [
   {
@@ -1226,6 +1226,7 @@ function App() {
             </a>
           </nav>
 
+<<<<<<< Updated upstream
           {page === 'landing' ||
           page === 'verify' ||
           page === 'admin' ||
@@ -1234,6 +1235,11 @@ function App() {
               <ConnectButton />
             </div>
           ) : null}
+=======
+          <div className="wallet-nav">
+            <ConnectButton />
+          </div>
+>>>>>>> Stashed changes
 
           <button
             type="button"
